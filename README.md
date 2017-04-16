@@ -1,4 +1,4 @@
-# Rain Drop Effect2: Effective, Fast and Flexible Rain Distortion Effect For Unity
+# Rain Drop Effect2: Effective, Fast and Flexible Rain Distortion Effect for Unity
 
 ![Image not found.](https://github.com/EdoFrank/bin/raw/master/RainDropEffect2/rde1.jpg)
 
