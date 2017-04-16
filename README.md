@@ -1,12 +1,21 @@
-# Rain Drop Effect 2
+# Rain Drop Effect2: Effective, Fast and Flexible Rain Distortion Effect For Unity
+
+![Image not found.](https://github.com/EdoFrank/bin/raw/master/RainDropEffect2/rde1.jpg)
 
 ## Motivation
 - There is a few cases achieves a rain distortion effect in public Unity projects. 
 - A realistic, fast and flexible rain drop effect is required for beginners.
 - Supporting DirectX9 is required.
 - Supporting VR is required.
+- Simulations of a pseudo friction 
 
 To attain these features, I implemented the Rain Drop Effect (v2) utilizing Unity Engine.
+
+
+
+[![Youtube video not found.](http://img.youtube.com/vi/ulWFE8J8E94/0.jpg)](https://www.youtube.com/watch?v=ulWFE8J8E94)
+
+ [**YouTube**](https://www.youtube.com/watch?v=ulWFE8J8E94)
 
 ## Introduction
 Some useful distortion effects are included in this **Unity** project. Before an use, you can check
