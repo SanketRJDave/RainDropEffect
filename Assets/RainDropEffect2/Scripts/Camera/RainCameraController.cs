@@ -60,12 +60,19 @@ public class RainCameraController : MonoBehaviour {
 	public Vector2 GlobalWind = Vector3.zero;
 
 
-	/// <summary>
-	/// Gets the current draw call.
-	/// </summary>
-	/// <value>The current draw call.</value>
+    /// <summary>
+    /// Gravity vector
+    /// </summary>
 
-	public int CurrentDrawCall 
+    public Vector3 GForceVector = Vector3.down;
+
+
+    /// <summary>
+    /// Gets the current draw call.
+    /// </summary>
+    /// <value>The current draw call.</value>
+
+    public int CurrentDrawCall 
 	{
 		get 
 		{
@@ -177,7 +184,8 @@ public class RainCameraController : MonoBehaviour {
             beh.Distance = this.distance;
             beh.ApplyFinalDepth (RenderQueue + cnt);
 			beh.ApplyGlobalWind (GlobalWind);
-			beh.Alpha = this.Alpha;
+            beh.GForceVector = this.GForceVector;
+            beh.Alpha = this.Alpha;
 			cnt += beh.MaxDrawCall;
             behIndex += 1;
         }

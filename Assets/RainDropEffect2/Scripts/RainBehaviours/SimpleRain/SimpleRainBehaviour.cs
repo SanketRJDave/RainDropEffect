@@ -191,7 +191,8 @@ public class SimpleRainBehaviour : RainBehaviourBase {
 
         rainController.ShaderType = this.ShaderType;
         rainController.Alpha = this.Alpha;
-		rainController.UpdateController ();
+        rainController.GForceVector = this.GForceVector;
+        rainController.UpdateController ();
 	}
 
 	/// <summary>

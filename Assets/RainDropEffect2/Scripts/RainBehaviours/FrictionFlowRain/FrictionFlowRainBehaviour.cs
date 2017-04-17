@@ -192,6 +192,7 @@ public class FrictionFlowRainBehaviour : RainBehaviourBase {
         rainController.ShaderType = this.ShaderType;
         rainController.Alpha = this.Alpha;
         rainController.Distance = this.Distance;
+        rainController.GForceVector = this.GForceVector;
         rainController.UpdateController();
     }
 

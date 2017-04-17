@@ -1,4 +1,4 @@
-﻿//#define SHOW_HIDED
+﻿#define SHOW_HIDED
 using UnityEngine;
 using System;
 using System.Collections;
@@ -264,11 +264,37 @@ public class RainDropTools : MonoBehaviour {
     {
         Vector2 camSize = GetCameraOrthographicSize(cam);
         Vector3 p = new Vector3(
-            camSize.x * offsetX + Random(-camSize.x / 2f, camSize.x / 2f),
-            camSize.y * offsetY + Random(-camSize.y / 2f, camSize.y / 2f),
+            Random(-camSize.x / 2f, camSize.x / 2f),
+            Random(-camSize.y / 2f, camSize.y / 2f),
             0f
             );
-		return parent.InverseTransformPoint(cam.transform.rotation * p + parent.position);
+        p = cam.transform.rotation * p + parent.position;
+        p.x += camSize.x * offsetX;
+        p.y += camSize.y * offsetY;
+        Vector3 localPos = parent.InverseTransformPoint(p);
+        return localPos;
+    }
+
+
+    /// <summary>
+    /// Get the g-forced screen movement
+    /// That is to say, we gets the rotation vector that applies gravity
+    /// </summary>
+    /// <param name="screenTransform"></param>
+    /// <param name="GForce"></param>
+    /// <returns></returns>
+
+    public static Vector3 GetGForcedScreenMovement(Transform screenTransform, Vector3 GForce)
+    {
+        Vector3 projY = Vector3.Project(GForce, screenTransform.up);
+        Vector3 projX = Vector3.Project(GForce, screenTransform.right);
+        Vector3 projZ = Vector3.Project(GForce, screenTransform.forward);
+
+        Vector3 relativePointY = screenTransform.InverseTransformPoint(screenTransform.position + projY);
+        Vector3 relativePointX = screenTransform.InverseTransformPoint(screenTransform.position + projX);
+        Vector3 relativePointZ = screenTransform.InverseTransformPoint(screenTransform.position + projZ);
+
+        return new Vector3(relativePointX.x, relativePointY.y, relativePointZ.z);
     }
 
 

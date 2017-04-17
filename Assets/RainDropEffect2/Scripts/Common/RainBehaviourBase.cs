@@ -44,6 +44,15 @@ public abstract class RainBehaviourBase : MonoBehaviour {
     [HideInInspector]
     public float Distance;
 
+
+    /// <summary>
+    /// G-force vector
+    /// </summary>
+
+    [HideInInspector]
+    public Vector3 GForceVector;
+
+
     /// <summary>
     /// Gets a value indicating whether this instance is playing.
     /// </summary>
@@ -151,21 +160,22 @@ public abstract class RainBehaviourBase : MonoBehaviour {
 	}
 
 
-	/// <summary>
-	/// Applies the global wind.
-	/// </summary>
-	/// <param name="globalWind">Global wind.</param>
+    /// <summary>
+    /// Applies the global wind
+    /// </summary>
+    /// <param name="globalWind"></param>
 
-	public virtual void ApplyGlobalWind (Vector2 globalWind)
-	{
-		return;
-	}
-		
-	/// <summary>
-	/// Unity's Awake
-	/// </summary>
+    public virtual void ApplyGlobalWind(Vector2 globalWind)
+    {
+        return;
+    }
 
-	public virtual void Awake () {
+
+    /// <summary>
+    /// Unity's Awake
+    /// </summary>
+
+    public virtual void Awake () {
 		return;
 	}
 

@@ -14,6 +14,7 @@ public class FrictionFlowRainController : MonoBehaviour
     public Camera camera { get; set; }
     public float Alpha { get; set; }
 	public Vector2 GlobalWind { get; set; }
+    public Vector3 GForceVector { get; set; }
     public bool NoMoreRain { get; set; }
     public RainDropTools.RainDropShaderType ShaderType { get; set; }
     public float Distance { get; set; }
@@ -317,6 +318,9 @@ public class FrictionFlowRainController : MonoBehaviour
         Vector3 frictionWay = dc.Drawer.transform.localPosition;
         Dictionary<Vector3, float> widthPixels = new Dictionary<Vector3, float>();
 
+        Vector3 downward = RainDropTools.GetGForcedScreenMovement(this.camera.transform, this.GForceVector);
+        downward = downward.normalized;
+
         for (int i = 0; i < iter; i++)
         {
             float dv = downValue * ((float)i / iter);
@@ -324,7 +328,7 @@ public class FrictionFlowRainController : MonoBehaviour
 
             for (int j = 0; j <= 2*widthResolution; j++)
             {
-                Vector3 downVector = frictionWay + (Vector3.down * dv);
+                Vector3 downVector = frictionWay + (downward * dv);
                 downVector += Vector3.left * dv + Vector3.right * dv * ((float)j / widthResolution);
                 Vector3 downVector2viewPoint = camera.WorldToViewportPoint(downVector);
                 float pixel = Variables.FrictionMap.GetPixel(

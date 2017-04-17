@@ -13,6 +13,7 @@ public class SimpleRainController : MonoBehaviour
     public Camera camera { get; set; }
     public float Alpha { get; set; }
 	public Vector2 GlobalWind { get; set; }
+    public Vector3 GForceVector { get; set; }
     public bool NoMoreRain { get; set; }
     public RainDropTools.RainDropShaderType ShaderType { get; set; }
 
@@ -261,8 +262,12 @@ public class SimpleRainController : MonoBehaviour
         dc.Drawer.Blur = Variables.Blur * Variables.BlurOverLifetime.Evaluate(progress) * Alpha;
         dc.Drawer.Darkness = Variables.Darkness * Alpha;
         dc.transform.localScale = dc.startSize * Variables.SizeOverLifetime.Evaluate(progress);
-        dc.transform.localPosition = dc.startPos + Vector3.up * Variables.PosYOverLifetime.Evaluate(progress);
-		dc.transform.localPosition += progress * new Vector3(GlobalWind.x, GlobalWind.y, 0f);
+        // old
+        //dc.transform.localPosition = dc.startPos + Vector3.up * Variables.PosYOverLifetime.Evaluate(progress);
+        Vector3 gforced = RainDropTools.GetGForcedScreenMovement(this.camera.transform, this.GForceVector);
+        gforced = gforced.normalized;
+        dc.transform.localPosition += new Vector3(-gforced.x, -gforced.y, 0f) * Variables.PosYOverLifetime.Evaluate(progress);
+        dc.transform.localPosition += progress * new Vector3(GlobalWind.x, GlobalWind.y, 0f);
         dc.Drawer.ShaderType = this.ShaderType;
         dc.Drawer.Show();
     }
