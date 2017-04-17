@@ -35,7 +35,7 @@ public class FrictionFlowRainVariables {
 	[Range(0, 50f)]
 	public int EmissionRateMin = 2;
 
-    [Range(5, 500)]
+    [Range(5, 1024)]
     public int Resolution = 500;
 
 	public AnimationCurve AlphaOverLifetime;

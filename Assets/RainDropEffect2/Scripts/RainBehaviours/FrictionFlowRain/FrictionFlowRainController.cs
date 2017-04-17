@@ -329,7 +329,14 @@ public class FrictionFlowRainController : MonoBehaviour
             for (int j = 0; j <= 2*widthResolution; j++)
             {
                 Vector3 downVector = frictionWay + (downward * dv);
-                downVector += Vector3.left * dv + Vector3.right * dv * ((float)j / widthResolution);
+
+                // TODO: Use normal vector of downward to search pixels
+                if (Mathf.Abs(downward.y) > Mathf.Abs(downward.x))
+                    downVector += Vector3.left * dv + Vector3.right * dv * ((float)j / widthResolution);
+                else
+                    downVector += Vector3.up * dv + Vector3.down * dv * ((float)j / widthResolution);
+                // END OF todo
+
                 Vector3 downVector2viewPoint = camera.WorldToViewportPoint(downVector);
                 float pixel = Variables.FrictionMap.GetPixel(
                     (int)(texW * downVector2viewPoint.x),

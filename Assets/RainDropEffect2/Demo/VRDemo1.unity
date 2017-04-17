@@ -98,6 +98,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 816438592}
     m_Modifications:
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4051288685797364, guid: dcb54e82016a0524fab3653f2f856cdf, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -133,6 +138,116 @@ Prefab:
     - target: {fileID: 1677653997483278, guid: dcb54e82016a0524fab3653f2f856cdf, type: 2}
       propertyPath: m_Name
       value: VR_Rain
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: GForceVector.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[0].value
+      value: 0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[1].time
+      value: 0.10818921
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[1].value
+      value: -0.0008116397
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[1].inSlope
+      value: -0.0045793676
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[1].outSlope
+      value: -0.0045793676
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[2].time
+      value: 0.29981261
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[2].value
+      value: -0.0004955465
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[2].inSlope
+      value: -0.004581034
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[2].outSlope
+      value: -0.004581034
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[3].time
+      value: 0.8195112
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[3].value
+      value: -0.0011707372
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[3].inSlope
+      value: -0.0009901123
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[3].outSlope
+      value: -0.0009901123
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[4].time
+      value: 0.99991405
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[4].value
+      value: -0.00061556324
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[4].inSlope
+      value: 0.0029063239
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.PosYOverLifetime.m_Curve.Array.data[4].outSlope
+      value: 0.0029063239
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.DistortionValue
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 114868202044280776, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: GForceVector.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114868202044280776, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.MaxRainSpawnCount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251663632803060, guid: dcb54e82016a0524fab3653f2f856cdf,
+        type: 2}
+      propertyPath: Variables.MaxRainSpawnCount
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcb54e82016a0524fab3653f2f856cdf, type: 2}

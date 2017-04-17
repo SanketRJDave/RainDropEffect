@@ -268,6 +268,7 @@ public class SimpleRainController : MonoBehaviour
         gforced = gforced.normalized;
         dc.transform.localPosition += new Vector3(-gforced.x, -gforced.y, 0f) * Variables.PosYOverLifetime.Evaluate(progress);
         dc.transform.localPosition += progress * new Vector3(GlobalWind.x, GlobalWind.y, 0f);
+        dc.transform.localPosition = new Vector3(dc.transform.localPosition.x, dc.transform.localPosition.y, 0f);
         dc.Drawer.ShaderType = this.ShaderType;
         dc.Drawer.Show();
     }

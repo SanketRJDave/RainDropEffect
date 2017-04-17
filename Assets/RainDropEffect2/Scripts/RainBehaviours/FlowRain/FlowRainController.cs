@@ -14,6 +14,7 @@ public class FlowRainController : MonoBehaviour
     public Camera camera { get; set; }
     public float Alpha { get; set; }
 	public Vector2 GlobalWind { get; set; }
+    public Vector3 GForceVector { get; set; }
     public bool NoMoreRain { get; set; }
     public RainDropTools.RainDropShaderType ShaderType { get; set; }
     public float Distance { get; set; }
@@ -307,12 +308,18 @@ public class FlowRainController : MonoBehaviour
 
         float t = dc.TimeElapsed;
 
-        dc.transform.localPosition = new Vector3(
-            Vector3.Slerp(dc.transform.localPosition, dc.transform.localPosition + Vector3.right * dc.rnd1, dc.posXDt).x,
-            dc.startPos.y - (1 / 2f) * t * t * dc.acceleration - Variables.InitialVelocity * t,
+        Vector3 downward = RainDropTools.GetGForcedScreenMovement(this.camera.transform, this.GForceVector);
+        downward = -downward.normalized;
+
+        Vector3 nextPos = new Vector3(
+            Vector3.Slerp(dc.transform.localPosition, dc.transform.localPosition + downward * dc.rnd1, dc.posXDt).x,
+            dc.startPos.y - downward.y * (1 / 2f) * t * t * dc.acceleration - Variables.InitialVelocity * t,
             0.001f // TODO: Work around
         );
-		dc.transform.localPosition += GetProgress(dc) * new Vector3(GlobalWind.x, GlobalWind.y, 0f);
+
+        dc.transform.localPosition = nextPos;
+
+        dc.transform.localPosition += GetProgress(dc) * new Vector3(GlobalWind.x, GlobalWind.y, 0f);
     }
 
 

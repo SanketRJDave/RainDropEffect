@@ -1,4 +1,4 @@
-﻿#define SHOW_HIDED
+﻿//#define SHOW_HIDED
 using UnityEngine;
 using System;
 using System.Collections;
